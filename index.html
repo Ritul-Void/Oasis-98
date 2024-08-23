@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OASISv1.0.1</title>
+    <link rel="stylesheet" href="./files/style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/logo.ico">
+    <link rel="stylesheet" href="assets/98.css" />
+    <style>
+      .createid{
+        display: block;
+        transition:display 0.5s ease-in-out;
+      }
+      .createid h3 {
+        text-align: center;
+      }
+      .createid p {
+        text-transform: capitalize;
+        padding: 1px 10px;
+      }
+      #features {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      .content {
+        display: flex;
+        height: 95%;
+      }
+      .left{
+        height: 100%;
+      }
+      .left img {
+        height: 100%;
+      }
+      #tittlelink{
+        text-decoration: none;
+        animation: blink 1s infinite ease-in-out;
+        
+      }
+     
+      @keyframes blink {
+        0%{
+          color: rgb(0, 0, 0);
+          
+          
+        }
+        50%{
+          color: blue;
+          text-shadow: 0px 0px 1px blue;
+        }
+        100%{
+          color: black;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="createid" id="idmaker">
+      <div class="title-bar">
+        <div class="title-bar-text">OASIS'98 : A Decentralised chat App</div>
+      </div>
+      <div class="content">
+        <div class="left">
+          <img src="./assets/form-bg.png" alt="" />
+        </div>
+        <div class="right">
+          <h3>Welcome to <a href="#" id="tittlelink">OASIS'98</a></h3>
+          <p>
+            create a unique user ID. This ID will be used to connect with
+            friends and others. You have to generate a custom user ID each time
+            you visit the app. Once you have your user ID, you can share it with
+            friends, and they can use it to connect with you. Similarly, you can
+            connect with others by entering their user ID.
+            <br> <br>
+           <strong> Enjoy Private Chatting. </strong>Each connection is direct, with no
+            intermediaries,ensuring full control over your communication.
+            <br> <br>
+            <span style="color: red">
+              Every time you refresh or revisit the page, a new user ID is
+              required. We don't store any user data or IDs, giving you full
+              control over your privacy and information.</span
+            >
+          </p>
+
+          <ul id="features">
+            <li>full anonymous</li>
+            <li>
+              encrypted by
+              <a href="https://www.npmjs.com/package/seablockjs">sea</a>
+            </li>
+            <li>no censorship</li>
+            <li>custom user ids</li>
+          </ul>
+
+          <div  id="form" autocomplete="off">
+
+            <label for="userId">Create User ID:</label><br />
+            <input type="text" id="userId" name="userId" required autocomplete="off"/>
+            <span id="errorMsg" class="error"
+              >User ID must be at least 8 characters  and include letters,
+              numbers, atleast 1 number , 1 capital alphabet and 1 small alphabet</span
+            ><br />
+            <button id="sbtn" onclick="getvalidation()">create</button>
+          </div>
+          <p id="policy">By Creating a userID you are agreeing to our <a href="./assets/privacy.html" target="_blank">privacy policy</a></p>
+        </div>
+      </div>
+    </div>
+    <div id="pc-recommendation">
+      For getting this experience, please use a PC.
+  </div>
+  
+    <div class="messenger-container" id="msgcontent">
+      <div class="title-bar">
+        <div class="title-bar-text">MSGR</div>
+        <div class="title-bar-controls">
+          <button aria-label="Help"></button>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="sidebar">
+          <h3>Connected Peers</h3>
+          <ul id="peer-list"></ul>
+        </div>
+        <div class="chat-area">
+          <div class="user-info">
+            <input type="text" id="my-id" placeholder="Your ID" readonly />
+            <input type="text" id="peer-id" placeholder="Peer ID" />
+            <button id="connect-btn">Connect</button>
+          </div>
+          <div class="chat-box" id="chat-box">
+            <!-- Messages will appear here -->
+          </div>
+          <div class="message-input">
+            <input
+              type="text"
+              id="message"
+              placeholder="Type your message here..."
+            />
+            <button id="send-btn">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="./files/script.js"></script>
+   <script>
+    
+   </script>
+  </body>
+</html>
